@@ -1,0 +1,28 @@
+.image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.table{
+    width: 100%;
+    text-align: center;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .bg {
+    background-image: url('hatter.jpg');
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  h2 {
+    color: white;
+  }

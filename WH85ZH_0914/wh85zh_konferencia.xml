@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<konferencia>
+    <cim>Legjobb utca 6.</cim>
+    <hallgatok>
+        <hallgato id="1">
+            <nev>
+                Kis István
+            </nev>
+            <lakcim>
+                Főutca 6.
+            </lakcim>
+        </hallgato>
+        <hallgato id="2">
+            <nev>
+                Mek Elek
+            </nev>
+            <lakcim>
+                Király utca 4.
+            </lakcim>
+        </hallgato>
+        <hallgato id="3">
+            <nev>
+                Nagy Béla
+            </nev>
+            <lakcim>
+                Mellék utca 2.
+            </lakcim>
+        </hallgato>
+    </hallgatok>
+    <helyszin>
+        Miskolci Egyetem
+    </helyszin>
+    <eloado id="01">
+        <nev>
+            Dr. Doktor
+        </nev>
+        <adoszam>
+            2345
+        </adoszam>
+        <lakcim>
+            Szép utca 23.
+        </lakcim>
+    </eloado>
+    <eloado id="02">
+        <nev>
+            Dr. Oktato
+        </nev>
+        <adoszam>
+            4356
+        </adoszam>
+        <lakcim>
+            Szép utca 28.
+        </lakcim>
+    </eloado>
+    <datum>
+        2022.09.14.
+    </datum>
+</konferencia>

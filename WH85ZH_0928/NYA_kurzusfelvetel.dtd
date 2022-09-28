@@ -1,0 +1,16 @@
+<!DOCTYPE kurzusfelvetel[
+<!ELEMENT kurzusfelvetel (hallgato, kurzusok)>
+    <!ELEMENT hallgato (szulnev, szak)>
+        <!ELEMENT szulnev>
+        <!ELEMENT szak>
+    <!ELEMENT kurzusok(kurzus*)>
+        <!ELEMENT kurzus(kurzusnev,kredit,hely,idopont,oktato,oraado)>
+            <!ELEMENT kurzusnev>
+            <!ELEMENT kredit>
+            <!ELEMENT hely>
+            <!ELEMENT idopont>
+            <!ELEMENT oktato>
+            <!ELEMENT oraado>
+
+
+]>

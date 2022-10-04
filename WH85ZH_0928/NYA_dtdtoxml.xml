@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE NYAmodell SYSTEM "NYA_ertodtd.dtd">
+
+<NYAmodell>
+
+    <A a="1">
+        <b>
+            <x>Abx adat</x>
+            <y>Aby adat</y>
+        </b>
+        <c>
+            <d>Acd adat</d>
+            <e>Ace adat</e>
+        </c>
+    </A>
+
+    <B a="2">
+        <b>
+            <x>Bbx</x>
+            <y>Bby</y>
+        </b>
+    </B>
+
+    <C a="3">
+        <b>Cb adat</b>
+    </C>
+
+    <AB aid="a1" bid="b1">
+        <c>AB kapcsolat adat</c>
+    </AB>
+
+    <BC bid="b1" cid="c1"/>
+
+</NYAmodell>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE NYA_adatbazis SYSTEM "NYA_adatbazis.dtd">
+ 
+<NYA_adatbazis>
+    <dolgozo kod="1">
+        <nev>Kiss Pista</nev>
+        <fizetes>350000</fizetes>
+    </dolgozo>
+</NYA_adatbazis>

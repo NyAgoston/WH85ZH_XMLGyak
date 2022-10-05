@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:simpleType name="tanevTipus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d[4]/\d[4]/\d[4]I(I)?"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="egyetemTipus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="ME"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="idTipus">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="5"></xs:minLength>
+            <xs:maxLength value="10"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="IgenNemTipus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="igen" />
+            <xs:enumeration value="nem" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="kurzusfelvetel">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="hallgato"/>
+                <xs:element name="kurzusok"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+</xs:schema>

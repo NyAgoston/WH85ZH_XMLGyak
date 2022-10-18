@@ -1,150 +1,117 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+    <xs:simpleType name="etteremTipus">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="foszakacsTipus">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="szakacsTipus">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="gyakornokTipus">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="vendegTipus">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="rendelesTipus">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-<vendeglatas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLSchemawh85zh.xsd">
-    <etterem ekod="e1">
-        <nev>Trófea</nev>
-        <cim>
-            <varos>Budapest</varos>
-            <utca>Visegrádi</utca>
-            <hazszam>13</hazszam>
-        </cim>
-        <csillag>4</csillag>
-    </etterem>
+    <xs:element name="vendeglatas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="etterem" type="etteremTipus" maxOccurs="unbounded" />
+                <xs:element name="foszakacs" type="foszakacsTipus" maxOccurs="unbounded" />
+                <xs:element name="szakacs" type="szakacsTipus" maxOccurs="unbounded" />
+                <xs:element name="gyakornok" type="gyakornokTipus" maxOccurs="unbounded" />
+                <xs:element name="vendeg" type="vendegTipus" maxOccurs="unbounded" />
+                <xs:element name="rendeles" type="rendelesTipus" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
 
-    <etterem ekod="e2">
-        <nev>Gundel</nev>
-        <cim>
-            <varos>Budapest</varos>
-            <utca>Petőfi</utca>
-            <hazszam>3</hazszam>
-        </cim>
-        <csillag>3</csillag>
-    </etterem>
+        <xs:key name="etterem_kulcs">
+            <xs:selector xpath="etterem" />
+            <xs:field xpath="@ekod" />
+        </xs:key>
 
-    <etterem ekod="e3">
-        <nev>Alvin Büfé</nev>
-        <cim>
-            <varos>Miskolc</varos>
-            <utca>Újgyőri</utca>
-            <hazszam>1</hazszam>
-        </cim>
-        <csillag>5</csillag>
-    </etterem>
+        <xs:key name="foszakacs_kulcs">
+            <xs:selector xpath="foszakacs" />
+            <xs:field xpath="@fkod" />
+        </xs:key>
 
-    <foszakacs fkod="f1" e_f="e1">
-        <nev>Havas Péter</nev>
-        <eletkor>35</eletkor>
-        <vegzettseg>Szakközépiskola</vegzettseg>
-        <vegzettseg>Institut Paul Bocuse</vegzettseg>
-    </foszakacs>
+        <xs:key name="szakacs_kulcs">
+            <xs:selector xpath="szakacs" />
+            <xs:field xpath="@szkod" />
+        </xs:key>
 
-    <foszakacs fkod="f2" e_f="e2">
-        <nev>Nagy Károly</nev>
-        <eletkor>30</eletkor>
-        <vegzettseg>Le Cordon Bleu</vegzettseg>        
-    </foszakacs>
+        <xs:key name="gyakornok_kulcs">
+            <xs:selector xpath="gyakornok" />
+            <xs:field xpath="@gykod" />
+        </xs:key>
 
-    <foszakacs fkod="f3" e_f="e3">
-        <nev>Bettes Benjámin</nev>
-        <eletkor>22</eletkor>
-        <vegzettseg>Ózdi szakács képző</vegzettseg>        
-    </foszakacs>
+        <xs:key name="vendeg_kulcs">
+            <xs:selector xpath="vendeg" />
+            <xs:field xpath="@vkod" />
+        </xs:key>
 
-    <szakacs szkod="sz1" e_sz="e1">
-        <nev>Teszt Elek</nev>
-        <reszleg>Saucier</reszleg>
-        <vegzettseg>Gimnázium</vegzettseg>
-        <vegzettseg>Ózdi Szakácsképző</vegzettseg>
-        <vegzettseg>Az Élet iskolája</vegzettseg>
-    </szakacs>
+        <xs:keyref refer="etterem_kulcs" name="etterem_idegen_kulcs">
+            <xs:selector xpath="rendeles" />
+            <xs:field xpath="@e_v_e" />
+        </xs:keyref>
 
-    <szakacs szkod="sz2" e_sz="e2">
-        <nev>Kis István</nev>
-        <reszleg>Kukta</reszleg>
-        <vegzettseg>Gimnázium</vegzettseg>
-        <vegzettseg>Ózdi Szakácsképző</vegzettseg>        
-    </szakacs>
+        <xs:keyref refer="vendeg_kulcs" name="vendeg_idegen_kulcs">
+            <xs:selector xpath="rendeles" />
+            <xs:field xpath="@e_v_v" />
+        </xs:keyref>
 
-    <szakacs szkod="sz3" e_sz="e3">
-        <nev>Jordán Kornél</nev>
-        <reszleg>Mosogató</reszleg>
-        <vegzettseg>Szikszó gyüjtő</vegzettseg>
-        <vegzettseg>Ózdi Szakácsképző</vegzettseg>        
-    </szakacs>
+        <xs:keyref refer="etterem_kulcs" name="etterem_foszakacs_idegen_kulcs">
+            <xs:selector xpath="foszakacs" />
+            <xs:field xpath="@e_f" />
+        </xs:keyref>
 
-    <gyakornok gykod="gy1" e_gy="e1">        
-        <nev>Bárdos Dávid</nev>
-        <gyakorlat>
-            <kezdete>2000.10.12.</kezdete>
-            <idotartama>3 év</idotartama>
-        </gyakorlat>
-        <muszak>Délelőtt</muszak>
-        <muszak>Este</muszak>
-    </gyakornok>
+        <xs:keyref refer="etterem_kulcs" name="etterem_szakacs_idegen_kulcs">
+            <xs:selector xpath="szakacs" />
+            <xs:field xpath="@e_sz" />
+        </xs:keyref>
 
-    <gyakornok gykod="gy2" e_gy="e2">        
-        <nev>Nagy Elemér</nev>
-        <gyakorlat>
-            <kezdete>2003.10.12.</kezdete>
-            <idotartama>1 év</idotartama>
-        </gyakorlat>
-        <muszak>Délelőtt</muszak>        
-    </gyakornok>
+        <xs:keyref refer="etterem_kulcs" name="etterem_gyakornok_idegen_kulcs">
+            <xs:selector xpath="gyakornok" />
+            <xs:field xpath="@e_gy"></xs:field>
+        </xs:keyref>
 
-    <gyakornok gykod="gy3" e_gy="e3">        
-        <nev>Babik Szilárd</nev>
-        <gyakorlat>
-            <kezdete>2020.10.12.</kezdete>
-            <idotartama>100 év</idotartama>
-        </gyakorlat>
-        <muszak>Délelőtt</muszak>
-        <muszak>Este</muszak>
-    </gyakornok>
+    </xs:element>
 
-    <vendeg vkod="v1">
-        <nev>Fekete Péter</nev>
-        <eletkor>21</eletkor>
-        <cim>
-            <varos>Miskolc</varos>
-            <utca>Márton</utca>
-            <hazszam>17</hazszam>
-        </cim>
-    </vendeg>
-
-    <vendeg vkod="v2">
-        <nev>Nagy Lajos</nev>
-        <eletkor>45</eletkor>
-        <cim>
-            <varos>Miskolc</varos>
-            <utca>Király</utca>
-            <hazszam>1</hazszam>
-        </cim>
-    </vendeg>
-
-    <vendeg vkod="v3">
-        <nev>Petőfi György</nev>
-        <eletkor>13</eletkor>
-        <cim>
-            <varos>Miskolc</varos>
-            <utca>Fő</utca>
-            <hazszam>12</hazszam>
-        </cim>
-    </vendeg>
-
-    <rendeles e_v_e="e1" e_v_v="v1">
-        <osszeg>9000</osszeg>
-        <etel>Steak</etel>
-    </rendeles>
-
-    <rendeles e_v_e="e2" e_v_v="v2">
-        <osszeg>8000</osszeg>
-        <etel>Rántotthús</etel>
-    </rendeles>
-
-    <rendeles e_v_e="e3" e_v_v="v3">
-        <osszeg>3000</osszeg>
-        <etel>Palacsinta</etel>
-    </rendeles>
-</vendeglatas>
+    <xs:element name="etterem">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nev" type="xs:string" />
+                <xs:element name="cim">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="varos" type="xs:string" />
+                            <xs:element name="utca" type="xs:string" />
+                            <xs:element name="hazszam" type="xs:string" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="csillag" type="xs:integer" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

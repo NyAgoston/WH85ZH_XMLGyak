@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<users xmlns="domwh85zh">
+  <user id="1">
+    <firstname>Jordan</firstname>
+    <lastname>Kornel</lastname>
+    <profession>Mernokinformatikus</profession>
+  </user>
+  <user id="2">
+    <firstname>Babik</firstname>
+    <lastname>Szilárd</lastname>
+    <profession>programmer</profession>
+  </user>
+  <user id="3">
+    <firstname>Bettes</firstname>
+    <lastname>Benjamin</lastname>
+    <profession>programmer</profession>
+  </user>
+</users>

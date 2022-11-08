@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<bajnoksag xsi:noNamespaceSchemaLocation="XMLSchemaWH85ZH.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<bajnoksag xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     
 
@@ -107,6 +107,23 @@
             <vezeteknev>Pedro</vezeteknev>
             <keresztnev>Poenca</keresztnev>  
     </biro>
+
+    <edzo ED_ID="1">
+        <vezeteknev>Tuchel</vezeteknev>
+        <keresztnev>Thomsa</keresztnev>       
+        <nemzetiseg>Német</nemzetiseg>
+    </edzo>
+    <edzo ED_ID="2">
+        <vezeteknev>Alonso</vezeteknev>
+        <keresztnev>Xavi</keresztnev>       
+        <nemzetiseg>Spanyol</nemzetiseg>
+    </edzo>
+    <edzo ED_ID="3">
+        <vezeteknev>Guardiola</vezeteknev>
+        <keresztnev>Pep</keresztnev>       
+        <nemzetiseg>Spanyol</nemzetiseg>
+    </edzo>
+    
 
     <jatszik E_M_E="1" E_M_M="1">
         <eredmeny>2</eredmeny>

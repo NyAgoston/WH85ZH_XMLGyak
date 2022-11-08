@@ -33,6 +33,7 @@
     <xs:attribute name="M_ID" type="xs:integer" />
     <xs:attribute name="M_F" type="xs:integer" />
     <xs:attribute name="B_ID" type="xs:integer" />
+    <xs:attribute name="ED_ID" type="xs:integer" />
     <xs:attribute name="E_M_E" type="xs:integer" />
     <xs:attribute name="E_M_M" type="xs:integer" />
 
@@ -93,6 +94,15 @@
         <xs:attribute ref="B_ID" use="required"/>
     </xs:complexType>
 
+    <xs:complexType name="edzo_tipus">
+        <xs:sequence>
+            <xs:element ref="vezeteknev"/>
+            <xs:element ref="keresztnev"/>            
+            <xs:element ref="nemzetiseg"/>        
+        </xs:sequence>
+        <xs:attribute ref="ED_ID" use="required"/>        
+    </xs:complexType>
+
     <xs:complexType name="jatszik_tipus">
         <xs:sequence>
             <xs:element ref="eredmeny"/>          
@@ -109,6 +119,7 @@
                 <xs:element name="egyesulet" type="egyesulet_tipus" maxOccurs="unbounded"/>
                 <xs:element name="merkozes" type="merkozes_tipus" maxOccurs="unbounded"/>
                 <xs:element name="biro" type="biro_tipus" maxOccurs="unbounded"/>
+                <xs:element name="edzo" type="edzo_tipus" maxOccurs="unbounded"/>
                 <xs:element name="jatszik" type="jatszik_tipus" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
@@ -138,6 +149,11 @@
         <xs:key name="B_ID">
             <xs:selector xpath="biro"/>
             <xs:field xpath="@B_ID"/>
+        </xs:key>
+
+        <xs:key name="ED_ID">
+            <xs:selector xpath="edzo"/>
+            <xs:field xpath="@ED_ID"/>
         </xs:key>
 
         <!-- Foreign keys -->

@@ -1,6 +1,105 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+
+    <!-- Elements, types -->
+
+    <xs:element name="pontok" type="xs:integer" />
+    <xs:element name="gyozelem" type="xs:integer" />
+    <xs:element name="dontetlen" type="xs:integer" />
+    <xs:element name="vereseg" type="xs:integer" />
+    <xs:element name="kor" type="xs:string" />
+    <xs:element name="fizetes" type="xs:integer" />
+    <xs:element name="poszt" type="xs:string" />
+    <xs:element name="vezeteknev" type="xs:string" />
+    <xs:element name="keresztnev" type="xs:string" />
+    <xs:element name="szulev" type="xs:integer" />
+    <xs:element name="nemzetiseg" type="xs:string" />
+    <xs:element name="iranyitoszam" type="xs:integer" />
+    <xs:element name="telepules" type="xs:string" />
+    <xs:element name="utca" type="xs:string" />
+    <xs:element name="hazszam" type="xs:integer" />
+    <xs:element name="nev" type="xs:string" />
+    <xs:element name="datum" type="xs:string" />
+    <xs:element name="ora" type="xs:string" />
+    <xs:element name="helyszin" type="xs:string" />
+    <xs:element name="szerep" type="xs:string" />
+    <xs:element name="eredmeny" type="xs:integer" />
+
+    <xs:attribute name="T_ID" type="xs:integer" />
+    <xs:attribute name="J_ID" type="xs:integer" />
+    <xs:attribute name="J_F" type="xs:integer" />
+    <xs:attribute name="E_ID" type="xs:integer" />
+    <xs:attribute name="E_F" type="xs:integer" />
+    <xs:attribute name="M_ID" type="xs:integer" />
+    <xs:attribute name="M_F" type="xs:integer" />
+    <xs:attribute name="B_ID" type="xs:integer" />
+    <xs:attribute name="E_M_E" type="xs:integer" />
+    <xs:attribute name="E_M_M" type="xs:integer" />
+
+     <!-- Complex types -->
+
+     <xs:complexType name="tabella_tipus">
+        <xs:sequence>
+            <xs:element ref="pontok"/>
+            <xs:element ref="gyozelem"/>
+            <xs:element ref="dontetlen"/>
+            <xs:element ref="vereseg"/>
+        </xs:sequence>
+        <xs:attribute ref="T_ID" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="jatekos_tipus">
+        <xs:sequence>
+            <xs:element ref="kor"/>
+            <xs:element ref="fizetes"/>
+            <xs:element ref="poszt"/>
+            <xs:element ref="vezeteknev"/>
+            <xs:element ref="keresztnev"/>
+            <xs:element ref="szulev"/>
+            <xs:element ref="nemzetiseg"/>
+        </xs:sequence>
+        <xs:attribute ref="J_ID" use="required"/>
+        <xs:attribute ref="J_F" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="egyesulet_tipus">
+        <xs:sequence>
+            <xs:element ref="iranyitoszam"/>
+            <xs:element ref="telepules"/>
+            <xs:element ref="utca"/>
+            <xs:element ref="hazszam"/>
+            <xs:element ref="nev"/>      
+        </xs:sequence>
+        <xs:attribute ref="E_ID" use="required"/>
+        <xs:attribute ref="E_F" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="merkozes_tipus">
+        <xs:sequence>
+            <xs:element ref="datum"/>
+            <xs:element ref="ora"/>
+            <xs:element ref="helyszin"/>           
+        </xs:sequence>
+        <xs:attribute ref="M_ID" use="required"/>
+        <xs:attribute ref="M_F" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="biro_tipus">
+        <xs:sequence>
+            <xs:element ref="szerep"/>
+            <xs:element ref="vezeteknev"/>
+            <xs:element ref="keresztnev"/>           
+        </xs:sequence>
+        <xs:attribute ref="B_ID" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="jatszik_tipus">
+        <xs:sequence>
+            <xs:element ref="eredmeny"/>          
+        </xs:sequence>
+        <xs:attribute ref="E_M_E" use="required"/>
+        <xs:attribute ref="E_M_M" use="required"/>
+    </xs:complexType>
 
     <xs:element name="bajnoksag">
          <xs:complexType>
@@ -69,106 +168,5 @@
         </xs:keyref>
 
     </xs:element>
-
-    <!-- Complex types -->
-
-    <xs:complexType name="tabella_tipus">
-        <xs:sequence>
-            <xs:element ref="pontok"/>
-            <xs:element ref="gyozelem"/>
-            <xs:element ref="dontetlen"/>
-            <xs:element ref="vereseg"/>
-        </xs:sequence>
-        <xs:attribute ref="T_ID" use="required"/>
-    </xs:complexType>
-
-    <xs:complexType name="jatekos_tipus">
-        <xs:sequence>
-            <xs:element ref="kor"/>
-            <xs:element ref="fizetes"/>
-            <xs:element ref="poszt"/>
-            <xs:element ref="vezeteknev"/>
-            <xs:element ref="keresztnev"/>
-            <xs:element ref="szulev"/>
-            <xs:element ref="nemzetiseg"/>
-        </xs:sequence>
-        <xs:attribute ref="J_ID" use="required"/>
-        <xs:attribute ref="J_F" use="required"/>
-    </xs:complexType>
-
-    <xs:complexType name="egyesulet_tipus">
-        <xs:sequence>
-            <xs:element ref="iranyitoszam"/>
-            <xs:element ref="telepules"/>
-            <xs:element ref="utca"/>
-            <xs:element ref="hazszam"/>
-            <xs:element ref="nev"/>      
-        </xs:sequence>
-        <xs:attribute ref="E_ID" use="required"/>
-        <xs:attribute ref="E_F" use="required"/>
-    </xs:complexType>
-
-    <xs:complexType name="merkozes_tipus">
-        <xs:sequence>
-            <xs:element ref="datum"/>
-            <xs:element ref="ora"/>
-            <xs:element ref="helyszin"/>           
-        </xs:sequence>
-        <xs:attribute ref="M_ID" use="required"/>
-        <xs:attribute ref="M_F" use="required"/>
-    </xs:complexType>
-
-    <xs:complexType name="biro_tipus">
-        <xs:sequence>
-            <xs:element ref="szerep"/>
-            <xs:element ref="vezeteknev"/>
-            <xs:element ref="keresztnev"/>           
-        </xs:sequence>
-        <xs:attribute ref="B_ID" use="required"/>
-    </xs:complexType>
-
-    <xs:complexType name="jatszik_tipus">
-        <xs:sequence>
-            <xs:element ref="eredmeny"/>          
-        </xs:sequence>
-        <xs:attribute ref="E_M_E" use="required"/>
-        <xs:attribute ref="E_M_M" use="required"/>
-    </xs:complexType>
-
-    <!-- Elements, types -->
-
-    <xs:element name="pontok" type="xs:integer />
-    <xs:element name="gyozelem" type="xs:integer />
-    <xs:element name="dontetlen" type="xs:integer />
-    <xs:element name="vereseg" type="xs:integer />
-    <xs:element name="kor" type="xs:string />
-    <xs:element name="fizetes" type="xs:integer />
-    <xs:element name="poszt" type="xs:string />
-    <xs:element name="vezeteknev" type="xs:string />
-    <xs:element name="keresztnev" type="xs:string />
-    <xs:element name="szulev" type="xs:integer />
-    <xs:element name="nemzetiseg" type="xs:string />
-    <xs:element name="iranyitoszam" type="xs:integer />
-    <xs:element name="telepules" type="xs:string />
-    <xs:element name="utca" type="xs:string />
-    <xs:element name="hazszam" type="xs:integer />
-    <xs:element name="nev" type="xs:string />
-    <xs:element name="Datum" type="xs:string />
-    <xs:element name="ora" type="xs:string />
-    <xs:element name="helyszin" type="xs:string />
-    <xs:element name="szerep" type="xs:string />
-    <xs:element name="eredmeny" type="xs:integer />
-
-    <xs:attribute name="T_ID" type="xs:integer" />
-    <xs:attribute name="J_ID" type="xs:integer" />
-    <xs:attribute name="T_F" type="xs:integer" />
-    <xs:attribute name="E_ID" type="xs:integer" />
-    <xs:attribute name="E_F" type="xs:integer" />
-    <xs:attribute name="T_ID" type="xs:integer" />
-    <xs:attribute name="M_ID" type="xs:integer" />
-    <xs:attribute name="M_F" type="xs:integer" />
-    <xs:attribute name="B_ID" type="xs:integer" />
-    <xs:attribute name="E_M_E" type="xs:integer" />
-    <xs:attribute name="E_M_M" type="xs:integer" />
 
 </xs:schema>

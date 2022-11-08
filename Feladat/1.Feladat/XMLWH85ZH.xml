@@ -1,168 +1,121 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <bajnoksag xsi:noNamespaceSchemaLocation="XMLSchemaWH85ZH.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <tabella>
-        <T_ID>1</t_ID>
+
+    
+
+    <tabella T_ID="1">
         <pontok>18</pontok>
         <gyozelem>5</gyozelem>
         <dontetlen>3</dontetlen>
         <vereseg>2</vereseg>
     </tabella>
-    <tabella>
-        <T_ID>2</t_ID>
+    <tabella T_ID="2">
         <pontok>15</pontok>
         <gyozelem>3</gyozelem>
         <dontetlen>6</dontetlen>
         <vereseg>1</vereseg>
     </tabella>
-    <tabella>
-        <T_ID>3</t_ID>
+    <tabella T_ID="3">         
         <pontok>14</pontok>
         <gyozelem>3</gyozelem>
         <dontetlen>5</dontetlen>
         <vereseg>2</vereseg>
     </tabella>
 
-    <egyesulet>
-        <E_ID>1</E_ID>
-        <cim>
-            <iranyitoszam>1012</iranyitoszam>
-            <telepules>London</telepules>
-            <utca>Square</utca>
-            <hazszam>1</hazszam>
-        </cim>
-        <nev>Chelsea</nev>
-        <E_F>1</E_F>
-    </egyesulet>
-    <egyesulet>
-        <E_ID>2</E_ID>
-        <cim>
-            <iranyitoszam>1012</iranyitoszam>
-            <telepules>Barcelona</telepules>
-            <utca>Senour</utca>
-            <hazszam>33</hazszam>
-        </cim>
-        <nev>Barcelona</nev>
-        <E_F>2</E_F>
-    </egyesulet>
-    <egyesulet>
-        <E_ID>3</E_ID>
-        <cim>
-            <iranyitoszam>1012</iranyitoszam>
-            <telepules>Manchester</telepules>
-            <utca>Garden</utca>
-            <hazszam>10</hazszam>
-        </cim>
-        <nev>Manchester City</nev>
-        <E_F>3</E_F>
-    </egyesulet>
-
-    <jatekos>
-        <J_ID>1</J_ID>
+    <jatekos J_ID="1" J_F="1">  
         <kor>31</kor>
         <fizetes>100</fizetes>
-        <poszt>kozeppalyas</poszt>
-        <nev>
-            <vezeteknev>Kanté</vezeteknev>
-            <keresztnev>N Golo</keresztnev>
-        </nev>
+        <poszt>kozeppalyas</poszt>     
+        <vezeteknev>Kanté</vezeteknev>
+        <keresztnev>N Golo</keresztnev>     
         <szulev>1991</szulev>
-        <nemzetiseg>Francia</nemzetiseg>
-        <J_F>1</J_F>
+        <nemzetiseg>Francia</nemzetiseg>      
     </jatekos>
-    <jatekos>
-        <J_ID>2</J_ID>
+    <jatekos J_ID="2" J_F="2">
         <kor>34</kor>
         <fizetes>120</fizetes>
-        <poszt>tamado</poszt>
-        <nev>
-            <vezeteknev>Lewandowski</vezeteknev>
-            <keresztnev>Kanté<</keresztnev>
-        </nev>
+        <poszt>tamado</poszt>     
+        <vezeteknev>Lewandowski</vezeteknev>
+        <keresztnev>Kanté</keresztnev>       
         <szulev>1988</szulev>
         <nemzetiseg>Lengyel</nemzetiseg>
-        <J_F>2</J_F>
     </jatekos>
-    <jatekos>
-        <J_ID>3</J_ID>
+    <jatekos J_ID="3" J_F="3">    
         <kor>22</kor>
         <fizetes>90</fizetes>
-        <poszt>kozeppalyas</poszt>
-        <nev>
-            <vezeteknev>Haaland</vezeteknev>
-            <keresztnev>Erling</keresztnev>
-        </nev>
+        <poszt>kozeppalyas</poszt>       
+        <vezeteknev>Haaland</vezeteknev>
+        <keresztnev>Erling</keresztnev>       
         <szulev>2000</szulev>
         <nemzetiseg>Norvég</nemzetiseg>
-        <J_F>3</J_F>
+
     </jatekos>
 
-    <biro>
-        <B_ID>1</B_ID>
-        <nev>
-            <vezeteknev>Collina</vezeteknev>
-            <utonev>Pierluigi</utonev>
-        </nev>
-        <szerep>Pálya</szerep>
-    </biro>
-    <biro>
-        <B_ID>2</B_ID>
-        <nev>
-            <vezeteknev>Kassai</vezeteknev>
-            <utonev>Viktor</utonev>
-        </nev>
-        <szerep>Pálya</szerep>
-    </biro>
-    <biro>
-        <B_ID>3</B_ID>
-        <nev>
-            <vezeteknev>Pedro</vezeteknev>
-            <utonev>Poenca</utonev>
-        </nev>
-        <szerep>Partjelző</szerep>
-    </biro>
+    <egyesulet E_ID="1" E_F="1">        
+        <iranyitoszam>1012</iranyitoszam>
+        <telepules>London</telepules>
+        <utca>Stadium</utca>
+        <hazszam>1</hazszam>        
+        <nev>Chelsea</nev>   
+    </egyesulet>
+    <egyesulet E_ID="2" E_F="2">        
+        <iranyitoszam>1012</iranyitoszam>
+        <telepules>Barcelona</telepules>
+        <utca>Senour</utca>
+        <hazszam>33</hazszam>        
+        <nev>Barcelona</nev>   
+    </egyesulet>
+    <egyesulet E_ID="3" E_F="3">      
+        <iranyitoszam>1012</iranyitoszam>
+        <telepules>Manchester</telepules>
+        <utca>Garden</utca>
+        <hazszam>10</hazszam>     
+        <nev>Manchester City</nev>
+    </egyesulet>
 
-    <merkozes>
-        <M_ID>1</M_ID>
-        <idopont>
-            <datum>2022.10.12</datum>
-            <ora>21:00</ora>
-        </idopont>
-        <helyszin>London</helyszin>
-        <M_F>1</M_F>
+    
+
+    <merkozes M_ID="1" M_F="1">
+        <datum>2022.10.12</datum>
+        <ora>21:00</ora>
+        <helyszin>London</helyszin>    
     </merkozes>
-    <merkozes>
-        <M_ID>2</M_ID>
-        <idopont>
-            <datum>2022.08.05</datum>
-            <ora>18:00</ora>
-        </idopont>
+    <merkozes M_ID="2" M_F="2">
+        <datum>2022.08.05</datum>
+        <ora>18:00</ora>
         <helyszin>Barcelona</helyszin>
-        <M_F>2</M_F>
     </merkozes>
-    <merkozes>
-        <M_ID>3</M_ID>
-        <idopont>
-            <datum>2022.06.28</datum>
-            <ora>20:00</ora>
-        </idopont>
+    <merkozes M_ID="3" M_F="3">
+        <datum>2022.06.28</datum>
+        <ora>20:00</ora>
         <helyszin>Paris</helyszin>
-        <M_F>3</M_F>
     </merkozes>
 
-    <jatszik>
-        <E_M_E>1</E_M_E>
+    <biro B_ID="1">
+        <szerep>Pálya</szerep>
+        <vezeteknev>Collina</vezeteknev>
+        <keresztnev>Pierluigi</keresztnev>
+    </biro>
+    <biro B_ID="2">
+        <szerep>Pálya</szerep>
+        <vezeteknev>Kassai</vezeteknev>
+        <keresztnev>Viktor</keresztnev>
+    </biro>
+    <biro B_ID="3">
+        <szerep>Partjelző</szerep>
+            <vezeteknev>Pedro</vezeteknev>
+            <keresztnev>Poenca</keresztnev>  
+    </biro>
+
+    <jatszik E_M_E="1" E_M_M="1">
         <eredmeny>2</eredmeny>
-        <E_M_M>1</E_M_M>
     </jatszik>
-    <jatszik>
-        <E_M_E>2</E_M_E>
+    <jatszik E_M_E="2" E_M_M="1">
         <eredmeny>1</eredmeny>
-        <E_M_M>1</E_M_M>
     </jatszik>
-    <jatszik>
-        <E_M_E>3</E_M_E>
+    <jatszik E_M_E="3" E_M_M="3">
         <eredmeny>1</eredmeny>
-        <E_M_M>3</E_M_M>
     </jatszik>
+    
 </bajnoksag>

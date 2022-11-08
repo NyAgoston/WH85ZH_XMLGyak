@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified">
+
+    <xs:element name="bajnoksag">
+         <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tabella" type="tabella_tipus" maxOccurs="unbounded"/>
+                <xs:element name="jatekos" type="jatekos_tipus" maxOccurs="unbounded"/>
+                <xs:element name="egyesulet" type="egyesulet_tipus" maxOccurs="unbounded"/>
+                <xs:element name="merkozes" type="merkozes_tipus" maxOccurs="unbounded"/>
+                <xs:element name="biro" type="biro_tipus" maxOccurs="unbounded"/>
+                <xs:element name="jatszik" type="jatszik_tipus" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <!-- Keys -->
+
+        <xs:key name="T_ID">
+            <xs:selector xpath="tabella"/>
+            <xs:field xpath="@T_ID"/>
+        </xs:key>
+
+        <xs:key name="J_ID">
+            <xs:selector xpath="jatekos"/>
+            <xs:field xpath="@J_ID"/>
+        </xs:key>
+
+        <xs:key name="E_ID">
+            <xs:selector xpath="egyesulet"/>
+            <xs:field xpath="@E_ID"/>
+        </xs:key>
+
+        <xs:key name="M_ID">
+            <xs:selector xpath="merkozes"/>
+            <xs:field xpath="@M_ID"/>
+        </xs:key>
+
+        <xs:key name="B_ID">
+            <xs:selector xpath="biro"/>
+            <xs:field xpath="@B_ID"/>
+        </xs:key>
+
+        <!-- Foreign keys -->
+
+        <xs:keyref name="egyesulet_FK" refer="E_ID">
+            <xs:selector xpath="jatekos"></xs:selector>
+            <xs:field xpath="@J_F"></xs:field>
+        </xs:keyref>
+
+        <xs:keyref name="tabella_FK" refer="E_ID">
+            <xs:selector xpath="egyesulet"></xs:selector>
+            <xs:field xpath="@E_F"></xs:field>
+        </xs:keyref>
+
+        <xs:keyref name="biro_FK" refer="B_ID">
+            <xs:selector xpath="merkozes"></xs:selector>
+            <xs:field xpath="@M_F"></xs:field>
+        </xs:keyref>
+
+        <xs:keyref name="jatszik_egyesulet_FK" refer="E_ID">
+            <xs:selector xpath="jatszik"></xs:selector>
+            <xs:field xpath="@E_M_E"></xs:field>
+        </xs:keyref>
+
+        <xs:keyref name="jatszik_merkozes_FK" refer="M_ID">
+            <xs:selector xpath="jatszik"></xs:selector>
+            <xs:field xpath="@E_M_M"></xs:field>
+        </xs:keyref>
+
+    </xs:element>
+
+    <!-- Complex types -->
+
+    <xs:complexType name="tabella_tipus">
+        <xs:sequence>
+            <xs:element ref="pontok"/>
+            <xs:element ref="gyozelem"/>
+            <xs:element ref="dontetlen"/>
+            <xs:element ref="vereseg"/>
+        </xs:sequence>
+        <xs:attribute ref="T_ID" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="jatekos_tipus">
+        <xs:sequence>
+            <xs:element ref="kor"/>
+            <xs:element ref="fizetes"/>
+            <xs:element ref="poszt"/>
+            <xs:element ref="vezeteknev"/>
+            <xs:element ref="keresztnev"/>
+            <xs:element ref="szulev"/>
+            <xs:element ref="nemzetiseg"/>
+        </xs:sequence>
+        <xs:attribute ref="J_ID" use="required"/>
+        <xs:attribute ref="J_F" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="egyesulet_tipus">
+        <xs:sequence>
+            <xs:element ref="iranyitoszam"/>
+            <xs:element ref="telepules"/>
+            <xs:element ref="utca"/>
+            <xs:element ref="hazszam"/>
+            <xs:element ref="nev"/>      
+        </xs:sequence>
+        <xs:attribute ref="E_ID" use="required"/>
+        <xs:attribute ref="E_F" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="merkozes_tipus">
+        <xs:sequence>
+            <xs:element ref="datum"/>
+            <xs:element ref="ora"/>
+            <xs:element ref="helyszin"/>           
+        </xs:sequence>
+        <xs:attribute ref="M_ID" use="required"/>
+        <xs:attribute ref="M_F" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="biro_tipus">
+        <xs:sequence>
+            <xs:element ref="szerep"/>
+            <xs:element ref="vezeteknev"/>
+            <xs:element ref="keresztnev"/>           
+        </xs:sequence>
+        <xs:attribute ref="B_ID" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="jatszik_tipus">
+        <xs:sequence>
+            <xs:element ref="eredmeny"/>          
+        </xs:sequence>
+        <xs:attribute ref="E_M_E" use="required"/>
+        <xs:attribute ref="E_M_M" use="required"/>
+    </xs:complexType>
+
+    <!-- Elements, types -->
+
+    <xs:element name="pontok" type="xs:integer />
+    <xs:element name="gyozelem" type="xs:integer />
+    <xs:element name="dontetlen" type="xs:integer />
+    <xs:element name="vereseg" type="xs:integer />
+    <xs:element name="kor" type="xs:string />
+    <xs:element name="fizetes" type="xs:integer />
+    <xs:element name="poszt" type="xs:string />
+    <xs:element name="vezeteknev" type="xs:string />
+    <xs:element name="keresztnev" type="xs:string />
+    <xs:element name="szulev" type="xs:integer />
+    <xs:element name="nemzetiseg" type="xs:string />
+    <xs:element name="iranyitoszam" type="xs:integer />
+    <xs:element name="telepules" type="xs:string />
+    <xs:element name="utca" type="xs:string />
+    <xs:element name="hazszam" type="xs:integer />
+    <xs:element name="nev" type="xs:string />
+    <xs:element name="Datum" type="xs:string />
+    <xs:element name="ora" type="xs:string />
+    <xs:element name="helyszin" type="xs:string />
+    <xs:element name="szerep" type="xs:string />
+    <xs:element name="eredmeny" type="xs:integer />
+
+    <xs:attribute name="T_ID" type="xs:integer" />
+    <xs:attribute name="J_ID" type="xs:integer" />
+    <xs:attribute name="T_F" type="xs:integer" />
+    <xs:attribute name="E_ID" type="xs:integer" />
+    <xs:attribute name="E_F" type="xs:integer" />
+    <xs:attribute name="T_ID" type="xs:integer" />
+    <xs:attribute name="M_ID" type="xs:integer" />
+    <xs:attribute name="M_F" type="xs:integer" />
+    <xs:attribute name="B_ID" type="xs:integer" />
+    <xs:attribute name="E_M_E" type="xs:integer" />
+    <xs:attribute name="E_M_M" type="xs:integer" />
+
+</xs:schema>

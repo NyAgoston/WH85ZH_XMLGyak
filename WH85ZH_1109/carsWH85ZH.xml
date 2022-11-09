@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<cars xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <supercars company = "Ferrari">
+        <carname type = "formula one">Ferrari 01</carname>
+        <carname type = "sports">Ferrari 02</carname>
+    </supercars>
+
+    <supercars company = "Lamborghini">
+        <carname>Lamborghini 01</carname>
+        <carname>Lamborghini 02</carname>
+        <carname>Lamborghini 03</carname>
+    </supercars>
+
+    <supercars company = "Bentley">
+        <carname>Bentley 01</carname>
+        <carname>Bentley 02</carname>
+        <carname>Bentley 03</carname>
+    </supercars>
+
+</cars>

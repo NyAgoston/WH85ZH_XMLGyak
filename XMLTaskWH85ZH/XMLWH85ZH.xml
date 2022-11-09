@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <bajnoksag xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
-    
-
     <tabella T_ID="1">
         <pontok>18</pontok>
         <gyozelem>5</gyozelem>
@@ -73,8 +70,6 @@
         <hazszam>10</hazszam>     
         <nev>Manchester City</nev>
     </egyesulet>
-
-    
 
     <merkozes M_ID="1" M_F="1">
         <datum>2022.10.12</datum>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <student id="01">
+        <firstname>Bettes</firstname>
+        <lastname>Benjamin</lastname>
+        <nickname>benji</nickname>
+        <age>13</age>
+    </student>
+    <student id="02">
+        <firstname>Jordan</firstname>
+        <lastname>Kornel</lastname>
+        <nickname>Papó</nickname>
+        <age>70</age>
+    </student>
+    <student id="03">
+        <firstname>Babik</firstname>
+        <lastname>Szilárd</lastname>
+        <nickname>Dagi</nickname>
+        <age>11</age>
+    </student>
+</class>

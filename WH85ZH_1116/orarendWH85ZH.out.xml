@@ -1,0 +1,15 @@
+<!DOCTYPE HTML><html>
+   <body>
+      <h2> KD orarend – 2021/22. I. felev.</h2>
+      <table border="1">
+         <tr bgcolor="#9acd32">
+            <th>ID</th>
+            <th>Targy</th>
+            <th>Idopont</th>
+            <th>Helszin</th>
+            <th>Oktato</th>
+            <th>Szak</th>
+         </tr>
+      </table>
+   </body>
+</html>

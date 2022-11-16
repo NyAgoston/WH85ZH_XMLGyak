@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<?xml-stylesheet type = "text/xsl" href = "studentWH85ZH.xsl"?>
+
+<class>
+    <student id="01">
+        <vezeteknev>Babik</vezeteknev>
+        <keresztnev>Szilárd</keresztnev>
+        <becenev>Dagi</becenev>
+        <kor>13</kor>
+        <osztondij>10000</osztondij>
+    </student>
+    <student id="02">
+        <vezeteknev>Jordán</vezeteknev>
+        <keresztnev>Kornél</keresztnev>
+        <becenev>Papo</becenev>
+        <kor>70</kor>
+        <osztondij>1000</osztondij>
+    </student>
+    <student id="03">
+        <vezeteknev>Bettes</vezeteknev>
+        <keresztnev>Benjamin</keresztnev>
+        <becenev>Colos</becenev>
+        <kor>23</kor>
+        <osztondij>5000</osztondij>
+    </student>
+</class>

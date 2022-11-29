@@ -1,0 +1,39 @@
+{ "_id": "WH85ZH",
+    "vizsgak":{
+        "vizsga": [
+            {
+            "kurzus": "Adatkezelés XML-ben",
+            "helyszin": "Inf. épület",
+            "idopont":{
+                "nap": "kedd",
+                "tol": 10,
+                "ig": 11
+            },
+            "oktato": "Dr. Bednarik László",
+            "jegy": 3
+        },
+        {
+            "kurzus": "Mesterséges Intelligencia alapjai",
+            "helyszin": "Galeria A/2",
+            "idopont":{
+                "nap": "kedd",
+                "tol": 9,
+                "ig": 11
+            },
+            "oktato": "Kunné Dr. Tamás Judit",
+            "jegy": 5
+        },
+        {
+            "kurzus": "Algoritmusok",
+            "helyszin": "A/2 218",
+            "idopont":{
+                "nap": "hétfő",
+                "tol": 16,
+                "ig": 18
+            },
+            "oktato": "Dr. Házy Attila",
+            "jegy": 4
+        }
+        ]
+    }
+}

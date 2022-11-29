@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<WH85ZH>
+  <vizsgak>
+    <vizsga>
+      <kurzus>Adatkezelés XML-ben</kurzus>
+      <helyszin>Inf. épület</helyszin>
+      <idopont>
+        <nap>kedd</nap>
+        <tol>10</tol>
+        <ig>11</ig>
+      </idopont>
+      <oktato>Dr. Bednarik László</oktato>
+      <jegy>3</jegy>
+    </vizsga>
+    <vizsga>
+      <kurzus>Mesterséges Intelligencia alapjai</kurzus>
+      <helyszin>Galeria A/2</helyszin>
+      <idopont>
+        <nap>kedd</nap>
+        <tol>9</tol>
+        <ig>11</ig>
+      </idopont>
+      <oktato>Kunné Dr. Tamás Judit</oktato>
+      <jegy>5</jegy>
+    </vizsga>
+    <vizsga>
+      <kurzus>Algoritmusok</kurzus>
+      <helyszin>A/2 218</helyszin>
+      <idopont>
+        <nap>hétfő</nap>
+        <tol>16</tol>
+        <ig>18</ig>
+      </idopont>
+      <oktato>Dr. Házy Attila</oktato>
+      <jegy>4</jegy>
+    </vizsga>
+  </vizsgak>
+</WH85ZH>

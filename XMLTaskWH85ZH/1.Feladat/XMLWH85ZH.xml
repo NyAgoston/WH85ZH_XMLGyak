@@ -2,7 +2,7 @@
 
 <bajnoksag xsi:noNamespaceSchemaLocation="XMLSchemaWH85ZH.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-    
+    <!-- Tabella -->
 
     <tabella T_ID="1">
         <pontok>18</pontok>
@@ -23,11 +23,13 @@
         <vereseg>2</vereseg>
     </tabella>
 
+    <!-- Játékosok -->
+
     <jatekos J_ID="1" J_F="1">  
         <kor>31</kor>
         <fizetes>100</fizetes>
         <poszt>kozeppalyas</poszt>            
-        <vezeteknev>Kanté</vezeteknev>
+        <vezeteknev>Kante</vezeteknev>
         <keresztnev>N Golo</keresztnev>     
         <szulev>1991</szulev>
         <nemzetiseg>Francia</nemzetiseg>      
@@ -37,7 +39,7 @@
         <fizetes>120</fizetes>
         <poszt>tamado</poszt>     
         <vezeteknev>Lewandowski</vezeteknev>
-        <keresztnev>Kanté</keresztnev>       
+        <keresztnev>Kante</keresztnev>       
         <szulev>1988</szulev>
         <nemzetiseg>Lengyel</nemzetiseg>
     </jatekos>
@@ -52,29 +54,37 @@
 
     </jatekos>
 
+    <!-- Egyesületek -->
+
     <egyesulet E_ID="1" E_F="1">        
-        <iranyitoszam>1012</iranyitoszam>
-        <telepules>London</telepules>
-        <utca>Stadium</utca>
-        <hazszam>1</hazszam>        
+        <cim>
+            <iranyitoszam>1012</iranyitoszam>
+            <telepules>London</telepules>
+            <utca>Stadium</utca>
+            <hazszam>1</hazszam>
+        </cim>        
         <nev>Chelsea</nev>   
     </egyesulet>
     <egyesulet E_ID="2" E_F="2">        
-        <iranyitoszam>1012</iranyitoszam>
-        <telepules>Barcelona</telepules>
-        <utca>Senour</utca>
-        <hazszam>33</hazszam>        
+        <cim>
+            <iranyitoszam>1012</iranyitoszam>
+            <telepules>Barcelona</telepules>
+            <utca>Senour</utca>
+            <hazszam>33</hazszam> 
+            </cim>       
         <nev>Barcelona</nev>   
     </egyesulet>
     <egyesulet E_ID="3" E_F="3">      
-        <iranyitoszam>1012</iranyitoszam>
-        <telepules>Manchester</telepules>
-        <utca>Garden</utca>
-        <hazszam>10</hazszam>     
+        <cim>
+            <iranyitoszam>1012</iranyitoszam>
+            <telepules>Manchester</telepules>
+            <utca>Garden</utca>
+            <hazszam>10</hazszam> 
+        </cim>    
         <nev>Manchester City</nev>
     </egyesulet>
 
-    
+    <!-- Mérkőzések -->
 
     <merkozes M_ID="1" M_F="1">
         <datum>2022.10.12</datum>
@@ -92,6 +102,8 @@
         <helyszin>Paris</helyszin>
     </merkozes>
 
+    <!-- Bírók -->
+
     <biro B_ID="1">
         <szerep>Pálya</szerep>
         <vezeteknev>Collina</vezeteknev>
@@ -108,6 +120,8 @@
             <keresztnev>Poenca</keresztnev>  
     </biro>
 
+    <!-- Edzők -->
+
     <edzo ED_ID="1">
         <vezeteknev>Tuchel</vezeteknev>
         <keresztnev>Thomsa</keresztnev>       
@@ -123,7 +137,8 @@
         <keresztnev>Pep</keresztnev>       
         <nemzetiseg>Spanyol</nemzetiseg>
     </edzo>
-    
+
+    <!-- Ki játszik kivel -->
 
     <jatszik E_M_E="1" E_M_M="1">
         <eredmeny>2</eredmeny>

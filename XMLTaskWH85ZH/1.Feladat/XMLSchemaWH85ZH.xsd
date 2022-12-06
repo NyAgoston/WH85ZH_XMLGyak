@@ -10,16 +10,12 @@
     <xs:element name="kor" type="xs:string" />
     <xs:element name="fizetes" type="xs:integer" />
     <xs:element name="poszt" type="xs:string" />
-    <xs:element name="vezeteknev" type="xs:string" />
-    <xs:element name="keresztnev" type="xs:string" />
     <xs:element name="szulev" type="xs:integer" />
     <xs:element name="nemzetiseg" type="xs:string" />
-    <xs:element name="iranyitoszam" type="xs:integer" />
     <xs:element name="telepules" type="xs:string" />
     <xs:element name="utca" type="xs:string" />
     <xs:element name="hazszam" type="xs:integer" />
     <xs:element name="nev" type="xs:string" />
-    <xs:element name="datum" type="xs:string" />
     <xs:element name="ora" type="xs:string" />
     <xs:element name="helyszin" type="xs:string" />
     <xs:element name="szerep" type="xs:string" />
@@ -36,6 +32,33 @@
     <xs:attribute name="ED_ID" type="xs:integer" />
     <xs:attribute name="E_M_E" type="xs:integer" />
     <xs:attribute name="E_M_M" type="xs:integer" />
+
+    <!-- Simple types -->
+
+    <xs:simpleType name="datum">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(19|20)\d\d.(0[1-9]|1[012]).(0[1-9]|[12][0-9]|3[01])"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="iranyitoszam">
+        <xs:restriction base="xs:string">
+          <xs:length value="4" />
+          <xs:pattern value="([0-9])*" />
+        </xs:restriction>
+      </xs:simpleType>
+
+      <xs:simpleType name="vezeteknev">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[A-Z][a-zA-Z]*( [A-Z][a-zA-Z]*)*" />
+        </xs:restriction>
+      </xs:simpleType>
+
+      <xs:simpleType name="keresztnev">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[A-Z][a-zA-Z]*( [A-Z][a-zA-Z]*)*" />
+        </xs:restriction>
+      </xs:simpleType>
 
      <!-- Complex types -->
 
@@ -54,8 +77,8 @@
             <xs:element ref="kor"/>
             <xs:element ref="fizetes"/>
             <xs:element ref="poszt"/>
-            <xs:element ref="vezeteknev"/>
-            <xs:element ref="keresztnev"/>
+            <xs:element name="vezeteknev" type="vezeteknev"/>
+            <xs:element name="keresztnev" type="keresztnev"/>
             <xs:element ref="szulev"/>
             <xs:element ref="nemzetiseg"/>
         </xs:sequence>
@@ -63,13 +86,19 @@
         <xs:attribute ref="J_F" use="required"/>
     </xs:complexType>
 
-    <xs:complexType name="egyesulet_tipus">
+    <xs:complexType name="cim_tipus">
         <xs:sequence>
-            <xs:element ref="iranyitoszam"/>
+            <xs:element name="iranyitoszam" type="iranyitoszam"/>
             <xs:element ref="telepules"/>
             <xs:element ref="utca"/>
-            <xs:element ref="hazszam"/>
-            <xs:element ref="nev"/>      
+            <xs:element ref="hazszam"/>     
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="egyesulet_tipus">
+        <xs:sequence>
+            <xs:element name="cim" type="cim_tipus"/>
+            <xs:element ref="nev" />
         </xs:sequence>
         <xs:attribute ref="E_ID" use="required"/>
         <xs:attribute ref="E_F" use="required"/>
@@ -77,7 +106,7 @@
 
     <xs:complexType name="merkozes_tipus">
         <xs:sequence>
-            <xs:element ref="datum"/>
+            <xs:element name="datum" type="datum"/>
             <xs:element ref="ora"/>
             <xs:element ref="helyszin"/>           
         </xs:sequence>
@@ -88,16 +117,16 @@
     <xs:complexType name="biro_tipus">
         <xs:sequence>
             <xs:element ref="szerep"/>
-            <xs:element ref="vezeteknev"/>
-            <xs:element ref="keresztnev"/>           
+            <xs:element name="vezeteknev" type="vezeteknev"/>
+            <xs:element name="keresztnev" type="keresztnev"/>           
         </xs:sequence>
         <xs:attribute ref="B_ID" use="required"/>
     </xs:complexType>
 
     <xs:complexType name="edzo_tipus">
         <xs:sequence>
-            <xs:element ref="vezeteknev"/>
-            <xs:element ref="keresztnev"/>            
+            <xs:element name="vezeteknev" type="vezeteknev"/>
+            <xs:element name="keresztnev" type="keresztnev"/>           
             <xs:element ref="nemzetiseg"/>        
         </xs:sequence>
         <xs:attribute ref="ED_ID" use="required"/>        
@@ -110,6 +139,8 @@
         <xs:attribute ref="E_M_E" use="required"/>
         <xs:attribute ref="E_M_M" use="required"/>
     </xs:complexType>
+
+    
 
     <xs:element name="bajnoksag">
          <xs:complexType>
